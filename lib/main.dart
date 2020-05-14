@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/emailPage.dart';
+import 'package:flutterapp/registerPage.dart';
 import 'package:flutterapp/signin_page.dart';
 
 void main() {
@@ -66,6 +67,13 @@ class _LoginState extends State<Login> {
                 icon: Icon(Icons.email)
               ),
             ),
+            TextField(
+              controller: passwordController,
+              decoration: InputDecoration(
+              labelText: 'Email',
+              icon: Icon(Icons.email)
+              ),
+            ),
             SizedBox(height: 15.0,),
             FlatButton(
               child: Text('Login'),
@@ -83,6 +91,12 @@ class _LoginState extends State<Login> {
                   print(e);
                 });
               },
+            ),
+            FlatButton(
+              child: Text('Registro'),
+              color: Colors.green,
+              textColor: Colors.white,
+              onPressed: () => _pushPage(context,  RegisterPage()),
             ),
             VerticalDivider(),
             FlatButton(
